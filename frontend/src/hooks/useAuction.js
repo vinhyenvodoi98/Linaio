@@ -62,7 +62,7 @@ export const useAuction = (auctionAddress) => {
         setTotalBidAmount(0);
       }
     }
-  }, [Tezos, auctionAddress]);
+  }, [Tezos, auctionAddress, address]);
 
   const bidding = useCallback(
     async (amount) => {
@@ -175,9 +175,17 @@ export const useAuction = (auctionAddress) => {
   }, [endTime]);
 
   const checkCanBuy = useCallback(async () => {
-    if (checkPurchased() && checkAuctionEnd()) setIsCanBuy(true);
-    else setIsCanBuy(false);
-  }, []);
+    if (!!auctionAddress) {
+      const contract = await Tezos.wallet.at(auctionAddress);
+      const auctionStorage = await contract.storage();
+      // check auction end
+      let _is_purchased = await auctionStorage.is_purchased;
+
+      let now = new Date();
+      if (_is_purchased && now.getTime() < endTime) setIsCanBuy(true);
+      else setIsCanBuy(false);
+    }
+  }, [auctionAddress, Tezos, endTime]);
 
   const checkPurchased = useCallback(async () => {
     if (!!auctionAddress) {
@@ -188,7 +196,7 @@ export const useAuction = (auctionAddress) => {
       setPurchased(_is_purchased);
       return _is_purchased;
     } else return false;
-  }, [auctionAddress]);
+  }, [auctionAddress, Tezos]);
 
   const getBountyPerBidder = useCallback(async () => {
     if (!!highestBid && biderBonus !== null && biders !== null) {
@@ -201,6 +209,7 @@ export const useAuction = (auctionAddress) => {
     if (auctionAddress !== null) {
       getAuctions();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auctionAddress]);
 
   return {

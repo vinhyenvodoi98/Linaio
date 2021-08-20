@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect, useContext } from 'react';
+import { Fragment, useState, useContext } from 'react';
 import { Button } from 'components';
 import Modal from 'components/Modal';
 import styled from 'styled-components';

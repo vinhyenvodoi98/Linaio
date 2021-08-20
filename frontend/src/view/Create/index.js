@@ -125,14 +125,18 @@ export default function Create() {
   const { image, fetchTokenFA2Info, updateOperator } = useFA2();
   const { createNewAuction } = useFactory();
 
-  const fetchFA2Info = useCallback((FA2adr, tokenId) => {
-    if (!!FA2adr && tokenId !== null) {
-      fetchTokenFA2Info(FA2adr, tokenId);
-    }
-  }, []);
+  const fetchFA2Info = useCallback(
+    (FA2adr, tokenId) => {
+      if (!!FA2adr && tokenId !== null) {
+        fetchTokenFA2Info(FA2adr, tokenId);
+      }
+    },
+    [fetchTokenFA2Info]
+  );
 
   useEffect(() => {
     fetchFA2Info(FA2adr, tokenId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [FA2adr, tokenId]);
 
   const openAuction = async () => {

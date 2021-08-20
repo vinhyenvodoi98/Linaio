@@ -50,7 +50,7 @@ export const useFactory = () => {
       await getAuctions();
     },
 
-    [Tezos]
+    [Tezos, getAuctions, setStatus, setContent]
   );
 
   useEffect(() => {

@@ -156,6 +156,7 @@ export default function Auction() {
     if (!!FA2adr && tokenId !== null) {
       fetchTokenFA2Info(FA2adr, tokenId);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [FA2adr, tokenId]);
 
   return (

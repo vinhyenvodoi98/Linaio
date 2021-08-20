@@ -17,6 +17,7 @@ export const TezosContext = createContext({
 });
 
 export const TaquitoProvider = ({ children }) => {
+  /* eslint-disable no-unused-vars */
   const [Tezos, setTezos] = useState(new TezosToolkit('https://florencenet.smartpy.io'));
   const [wallet, setWallet] = useState(null);
   const [address, setAddress] = useState(null);
@@ -100,6 +101,7 @@ export const TaquitoProvider = ({ children }) => {
 
   useEffect(() => {
     connectWallet();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [1]);
 
   // return [address, loadWeb3Modal, logoutOfWeb3Modal];

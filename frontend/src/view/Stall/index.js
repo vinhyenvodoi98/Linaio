@@ -3,7 +3,7 @@ import { Card, ShoeBox, Shoe, GradientText } from 'components';
 import { floating } from 'components/Animation';
 import { CountDown } from 'components/CountDown';
 import { Link } from 'react-router-dom';
-import { useContext, useEffect, useCallback } from 'react';
+import { useEffect, useCallback } from 'react';
 import { useFactory } from 'hooks/useFactory';
 import { useAuction } from 'hooks/useAuction';
 import { useFA2 } from 'hooks/useFA2';
@@ -67,14 +67,18 @@ function StallCard({ auction }) {
   const { FA2adr, tokenId, highestBid, openingPrice, endTime, purchased } = useAuction(auction);
   const { name, image, fetchTokenFA2Info } = useFA2();
 
-  const fetchFA2Info = useCallback((FA2adr, tokenId) => {
-    if (!!FA2adr && tokenId !== null) {
-      fetchTokenFA2Info(FA2adr, tokenId);
-    }
-  }, []);
+  const fetchFA2Info = useCallback(
+    (FA2adr, tokenId) => {
+      if (!!FA2adr && tokenId !== null) {
+        fetchTokenFA2Info(FA2adr, tokenId);
+      }
+    },
+    [fetchTokenFA2Info]
+  );
 
   useEffect(() => {
     fetchFA2Info(FA2adr, tokenId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [FA2adr, tokenId]);
 
   return (

@@ -63,7 +63,7 @@ export const useFA2 = () => {
 
       return isSuccess;
     },
-    [Tezos, address]
+    [Tezos, address, setStatus, setContent]
   );
 
   return { name, image, description, attributes, fetchTokenFA2Info, updateOperator };
