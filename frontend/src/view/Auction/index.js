@@ -193,7 +193,6 @@ export default function Auction() {
                 <Center>
                   <Ptitle>Highest bid</Ptitle>
                   <div>{highestBid} XTZ</div>
-                  <span style={{ fontSize: '0.7em', color: '#888888' }}>$50</span>
                 </Center>
                 <Center>
                   <Ptitle>Auction ends in</Ptitle>

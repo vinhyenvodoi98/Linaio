@@ -62,7 +62,7 @@ export default function BuyModal({ getAuctions, buy, openingPrice }) {
             </Button>
           ) : (
             <Button margin="0px" width="100%" onClick={() => onClickBuy()}>
-              Place a bid
+              Buy
             </Button>
           )}
         </ModalLayout>
