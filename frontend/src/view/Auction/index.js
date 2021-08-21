@@ -11,6 +11,7 @@ import BuyModal from './BuyModal';
 import BidModal from './BidModal';
 import { useFA2 } from 'hooks/useFA2';
 import { TezosContext } from 'contexts/Taquito';
+import useInterval from 'hooks/useInterval';
 
 const Layout = styled.div`
   align-items: center;
@@ -151,6 +152,12 @@ export default function Auction() {
     checkPurchased();
     checkCanBuy();
   }, [getBountyPerBidder, checkAuctionEnd, checkPurchased, checkCanBuy]);
+
+  useInterval(() => {
+    if (!!auctionAddress) {
+      getAuctions();
+    }
+  }, 4000);
 
   useEffect(() => {
     if (!!FA2adr && tokenId !== null) {

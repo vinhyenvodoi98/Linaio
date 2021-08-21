@@ -7,6 +7,7 @@ import { useEffect, useCallback } from 'react';
 import { useFactory } from 'hooks/useFactory';
 import { useAuction } from 'hooks/useAuction';
 import { useFA2 } from 'hooks/useFA2';
+import useInterval from 'hooks/useInterval';
 
 const QALayout = styled.div`
   display: flex;
@@ -108,7 +109,11 @@ function StallCard({ auction }) {
 }
 
 export default function Stall() {
-  const { auctions } = useFactory();
+  const { auctions, getAuctions } = useFactory();
+
+  useInterval(() => {
+    getAuctions();
+  }, 4000);
 
   return (
     <QALayout>

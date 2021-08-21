@@ -67,6 +67,11 @@ const RightNav = ({ open }) => {
           <Button>Q&A</Button>
         </Link>
       </li>
+      <li>
+        <Link to="/stall">
+          <Button>Shop</Button>
+        </Link>
+      </li>
       {noNeedWallet.includes(location.pathname) ? (
         <Fragment></Fragment>
       ) : (

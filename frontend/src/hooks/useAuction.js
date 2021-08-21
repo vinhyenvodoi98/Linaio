@@ -201,7 +201,7 @@ export const useAuction = (auctionAddress) => {
   const getBountyPerBidder = useCallback(async () => {
     if (!!highestBid && biderBonus !== null && biders !== null) {
       const _bountyPerBidder = (highestBid * biderBonus) / 100 / biders.size;
-      setBountyPerBidder(parseBalance(_bountyPerBidder, 6));
+      setBountyPerBidder(_bountyPerBidder);
     }
   }, [highestBid, biderBonus, biders]);
 

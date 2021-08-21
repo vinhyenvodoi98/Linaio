@@ -123,7 +123,7 @@ export default function Create() {
   const [openningPrice, setOpenningPrice] = useState(null);
   const [auctionTime, setAuctionTime] = useState(null);
   const { image, fetchTokenFA2Info, updateOperator } = useFA2();
-  const { createNewAuction } = useFactory();
+  const { getAuctions, createNewAuction } = useFactory();
 
   const fetchFA2Info = useCallback(
     (FA2adr, tokenId) => {
@@ -142,6 +142,7 @@ export default function Create() {
   const openAuction = async () => {
     const isUpdate = await updateOperator(FA2adr, tokenId);
     if (isUpdate) await createNewAuction(FA2adr, tokenId, openningPrice, auctionTime);
+    await getAuctions();
   };
 
   return (
