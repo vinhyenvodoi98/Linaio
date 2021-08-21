@@ -3,7 +3,7 @@ import { ShoeBox, Shoe, Pressed, Button, Input } from 'components';
 import { floating } from 'components/Animation';
 import { useEffect, useCallback, useState } from 'react';
 
-import image1 from 'assets/shoe/shoe3.png';
+import image1 from 'assets/shoe/shoe6.png';
 import Tooltip from 'components/Tooltip';
 import { useFA2 } from 'hooks/useFA2';
 import { useFactory } from 'hooks/useFactory';

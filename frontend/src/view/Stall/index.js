@@ -100,8 +100,10 @@ function StallCard({ auction }) {
           <CountDown end={endTime} />
         ) : purchased ? (
           <SText>Sold !!</SText>
-        ) : (
+        ) : !highestBid ? (
           <SText>Let's Buy now !</SText>
+        ) : (
+          <SText>Get bonus !</SText>
         )}
       </>
     </Link>
@@ -117,14 +119,11 @@ export default function Stall() {
 
   return (
     <QALayout>
-      {auctions
-        .slice(0)
-        .reverse()
-        .map((auction, index) => (
-          <RCard key={index}>
-            <StallCard auction={auction} />
-          </RCard>
-        ))}
+      {auctions.map((auction, index) => (
+        <RCard key={index}>
+          <StallCard auction={auction} />
+        </RCard>
+      ))}
     </QALayout>
   );
 }

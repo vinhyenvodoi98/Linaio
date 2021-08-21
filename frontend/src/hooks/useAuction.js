@@ -182,7 +182,7 @@ export const useAuction = (auctionAddress) => {
       let _is_purchased = await auctionStorage.is_purchased;
 
       let now = new Date();
-      if (_is_purchased && now.getTime() < endTime) setIsCanBuy(true);
+      if (!_is_purchased && now.getTime() < endTime) setIsCanBuy(true);
       else setIsCanBuy(false);
     }
   }, [auctionAddress, Tezos, endTime]);

@@ -33,7 +33,9 @@ export default function Collapse({ title, content }) {
     <Box>
       <CollapseButton width="80vw" rotate={isDrop} onClick={() => setIsDrop(!isDrop)}>
         <Text>{title}</Text>
-        <Text margin="20px 0px">{content}</Text>
+        <Text margin="20px 0px" style={{ fontSize: '0.7em' }}>
+          {content}
+        </Text>
       </CollapseButton>
     </Box>
   );
