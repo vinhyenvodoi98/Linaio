@@ -1,27 +1,44 @@
 export const qandas = [
   {
-    question: 'What is Lorem Ipsum?',
+    question: 'How long does it take me to receive my items?',
     answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      'About 2 - 3 weeks. We will customs the products base on your size, so it may take a while for preparing stage and shipping out',
   },
   {
-    question: 'What is Lorem Ipsum?',
+    question: 'How can I track my order status?',
     answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      'You can track your package by clicking Check Your Order Status button (from your order confirmation email).',
   },
   {
-    question: 'What is Lorem Ipsum?',
+    question: 'Can I change my order?',
     answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      'If you want to change your size, please contact us via email within 1 hour since your order placed.',
   },
   {
-    question: 'What is Lorem Ipsum?',
-    answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    question: 'Can my order be dispatched internationally?',
+    answer: 'Shipping worldwide? Yes, of course. ',
   },
   {
-    question: 'What is Lorem Ipsum?',
+    question: 'If I lost the auction, how can I get my refund?',
+    answer: 'You will be fully refunded and get a little bonus for taking part in our auction',
+  },
+  {
+    question: 'How do I clean my shoes?',
     answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      'Our painted designs are waterproof. However, we recommend you to store your pairs in cool and dry place. Use a soft moisture tower to wipe off dirts on the products. Strictly avoid alcohol, acetone or similar chemical bleach.',
+  },
+  {
+    question: 'How do I find my right size and fit?',
+    answer:
+      'Our designs are on the base of the authentic Nike Airforce 1, so our shoes sizes are exactly the same as standard size charts published on Nike.com. You can navigate to our size charts below.',
+  },
+  {
+    question: "How do I get Linaio's newest product releases?",
+    answer: 'You can subcribe our Twitter, Instagram and Youtube channel to keep updated.',
+  },
+  {
+    question: 'Where can I learn more about Linaio brand?',
+    answer:
+      "Please don't hesitate to contact us via email or any means of social media for more information about our brand and corporating.",
   },
 ];

@@ -1,9 +1,9 @@
 import { Pressed, Convex, Row, Button, Card, Center, ShoeBox, Shoe } from 'components';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import shoe1 from 'assets/shoe/shoe1.png';
+import shoe1 from 'assets/shoe/shoe5.png';
 import shoe2 from 'assets/shoe/shoe2.png';
-import shoe3 from 'assets/shoe/shoe3.png';
+import shoe3 from 'assets/shoe/shoe4.png';
 // import Contact from 'components/Contact';
 
 const NJY = styled.p`

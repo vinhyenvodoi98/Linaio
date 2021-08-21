@@ -133,9 +133,7 @@ export default function Auction() {
     totalBidAmount,
     endTime,
     bountyPerBidder,
-    isAuctionEnd,
     purchased,
-    isCanBuy,
     getAuctions,
     checkAuctionEnd,
     bidding,
@@ -207,20 +205,7 @@ export default function Auction() {
                   <CountDown end={endTime} />
                 </Center>
               </Row>
-              {isAuctionEnd ? (
-                isCanBuy ? (
-                  <BuyModal
-                    getAuctions={getAuctions}
-                    owner={address}
-                    buy={buy}
-                    openingPrice={openingPrice}
-                  />
-                ) : purchased ? (
-                  <NftName style={{ textAlign: 'center' }}>Sold!!</NftName>
-                ) : (
-                  <AutoAnnouncement bountyPerBidder={bountyPerBidder} refund={refund} />
-                )
-              ) : (
+              {new Date().getTime() < endTime ? (
                 <BidModal
                   minimum={!highestBid ? openingPrice : highestBid}
                   totalBidAmount={totalBidAmount}
@@ -228,6 +213,17 @@ export default function Auction() {
                   owner={address}
                   getAuctions={getAuctions}
                 />
+              ) : purchased ? (
+                <NftName style={{ textAlign: 'center' }}>Sold!!</NftName>
+              ) : !highestBid ? (
+                <BuyModal
+                  getAuctions={getAuctions}
+                  owner={address}
+                  buy={buy}
+                  openingPrice={openingPrice}
+                />
+              ) : (
+                <AutoAnnouncement bountyPerBidder={bountyPerBidder} refund={refund} />
               )}
             </BidPrice>
           </BidBox>
